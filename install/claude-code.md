@@ -3,18 +3,15 @@
 ## Quick install
 
 ```bash
-# 1. Copy cognitive protocol to Claude's config
-cp cognitive-protocol.md ~/.claude/constraint-as-catalyst.md
-
-# 2. Add reference in CLAUDE.md
-echo '@~/.claude/constraint-as-catalyst.md' >> ~/.claude/CLAUDE.md
+# 1. Inject core rules into CLAUDE.md (direct content injection — works on all versions)
+cat cognitive-protocol.md >> ~/.claude/CLAUDE.md
 ```
 
 ## What gets loaded where
 
 | File | Destination | Purpose |
 |---|---|---|
-| `cognitive-protocol.md` | `~/.claude/constraint-as-catalyst.md` | Always-on core rules (~30 lines) |
+| `cognitive-protocol.md` | `~/.claude/CLAUDE.md` (appended) | Always-on core rules (~30 lines) |
 | `SKILL.md` | `~/.claude/skills/constraint-as-catalyst/SKILL.md` | Full reference (loaded on demand) |
 | `anti-patterns.md` | `~/.claude/skills/constraint-as-catalyst/anti-patterns.md` | Detailed anti-pattern guide |
 | `examples.md` | `~/.claude/skills/constraint-as-catalyst/examples.md` | Before/after reference |
@@ -22,8 +19,8 @@ echo '@~/.claude/constraint-as-catalyst.md' >> ~/.claude/CLAUDE.md
 ## Full install (with skill files)
 
 ```bash
-# 1. Core rules
-cp cognitive-protocol.md ~/.claude/constraint-as-catalyst.md
+# 1. Core rules (inject directly into CLAUDE.md)
+cat cognitive-protocol.md >> ~/.claude/CLAUDE.md
 
 # 2. Skill files
 mkdir -p ~/.claude/skills/constraint-as-catalyst
@@ -31,8 +28,7 @@ cp SKILL.md ~/.claude/skills/constraint-as-catalyst/
 cp anti-patterns.md ~/.claude/skills/constraint-as-catalyst/
 cp examples.md ~/.claude/skills/constraint-as-catalyst/
 
-# 3. Register in CLAUDE.md
-echo '@~/.claude/constraint-as-catalyst.md' >> ~/.claude/CLAUDE.md
+# 3. (Core rules already injected in step 1)
 ```
 
 ## Verify
@@ -46,7 +42,6 @@ If First Principles (`~/.claude/first-principles.md`) is already loaded, no chan
 ## Uninstall
 
 ```bash
-rm ~/.claude/constraint-as-catalyst.md
+# Remove the Constraint as Catalyst section from ~/.claude/CLAUDE.md (search for "# Constraint as Catalyst — Cognitive Protocol" header)
 rm -rf ~/.claude/skills/constraint-as-catalyst
-# Remove the @~/.claude/constraint-as-catalyst.md line from ~/.claude/CLAUDE.md
 ```
