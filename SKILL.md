@@ -1,3 +1,8 @@
+---
+name: 以约求变
+description: "以约求变——约束是创新的催化剂，刻意制造压力激发创新。"
+---
+
 # Constraint as Catalyst
 
 A cognitive base that shifts the relationship with constraints from "obstacles to remove" to "innovation catalysts to deliberately create." Inspired by Musk's impossible timelines, 5-step algorithm, manufacturing focus, and Jobs' philosophy of focus through negation.
