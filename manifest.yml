@@ -1,0 +1,28 @@
+schema_version: 1
+name: constraint-as-catalyst
+tier: 6
+
+triggers:
+  - if: "Facing a constraint (time, budget, scope, resources) and trying to remove or bypass it"
+    then: "Ask instead: 'What solution becomes possible ONLY because of this constraint?' Weaponize it"
+    action_type: pause_and_check
+  - if: "About to improve or optimize a component, process, or feature"
+    then: "First ask: 'What if this didn't exist at all?' The best part is no part. Demand proof each requirement is load-bearing"
+    action_type: require_justification
+  - if: "Scope is expanding or features are being added"
+    then: "Do not negotiate — delete. Ask: 'If we could only ship ONE thing, which one makes users come back?' Treat addition as a cost"
+    action_type: require_verification
+  - if: "Everyone is optimizing the same constraint"
+    then: "Ask whether a different constraint is actually binding. The constraint you feel is not always the one that matters"
+    action_type: pause_and_check
+
+activation:
+  - "Working within tight resource constraints"
+  - "Scope creep or feature bloat is occurring"
+  - "Deciding what to build vs what to cut"
+  - "Optimizing a process or system for efficiency"
+
+recommends:
+  - "attention-allocation"
+  - "first-principles"
+  - "inversion-thinking"
